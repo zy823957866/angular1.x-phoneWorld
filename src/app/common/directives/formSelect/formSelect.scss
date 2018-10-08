@@ -1,0 +1,82 @@
+.formSelect{
+	& > label, & > div{
+		display: block;
+		float: left;
+	}
+	& > label{
+		line-height: 30px;
+		padding-right: 5px;
+		text-align: right;
+	}
+	.input input{
+		width:100%;
+		&:hover{
+			cursor: pointer;
+		}
+	}
+	.dropdown > div{
+		position: relative;
+		.selectIcon {
+			position: absolute;
+			right: 17px;
+			font-size: 20px;
+			transform: scale(0.5);
+			top: 5px;
+			color: #8ea1b5;
+		}
+	}
+	.dropdown-menu{
+		width: 100%;
+		max-width: 100%;
+		max-height: 400px;
+		overflow-y:auto;
+		overflow-x:hidden;
+		border-radius: 10px;
+		padding: 10px 0;
+		margin: 0.4rem 0;
+		li{
+			line-height: 30px;
+			padding:0 15px;
+			cursor:pointer;
+			width: 100%;
+			margin-left: 1px;
+		}
+	}
+	.e-fade {
+  		display: inline-block;
+  		vertical-align: middle;
+  		-webkit-transform: perspective(1px) translateZ(0);
+  		transform: perspective(1px) translateZ(0);
+  		box-shadow: 0 0 1px transparent;
+  		overflow: hidden;
+  		-webkit-transition-duration: 0.2s;
+  		transition-duration: 0.1s;
+  		-webkit-transition-property: color, background-color;
+  		transition-property: color, background-color; 
+	}
+
+	.e-fade:hover, .e-fade:focus, .e-fade:active {
+  		background-color: #49a1ea;
+  		color: #fff;
+  	}
+
+  	.icon-rotate-top,.icon-rotate-down{
+  		transform-origin: 50% 50%;
+  		animation: rotate-top ease-out 0.2s;
+  		animation-fill-mode:forwards;
+  	}
+
+  	.icon-rotate-down{
+		animation: rotate-down ease-out 0.2s;
+  	}
+
+  	@keyframes rotate-top {
+  		0% {transform: rotate(0deg) scale(0.5);}
+	    100% {transform: rotate(180deg) scale(0.5);}
+  	}
+
+  	@keyframes rotate-down {
+  		0% {transform: rotate(180deg) scale(0.5);}
+	    100% {transform: rotate(0deg) scale(0.5);}
+  	}
+}

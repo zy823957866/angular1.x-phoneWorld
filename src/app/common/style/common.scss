@@ -1,0 +1,70 @@
+@import './public';
+
+body{color:#333;}
+label{margin:0;}
+
+input::-ms-clear{display:none;}
+input::-ms-reveal{display:none;}
+
+input:focus{
+	outline: none;
+}
+
+menu{
+	height:calc(100% - 72px);
+	width: 212px;
+	float:left;
+	background: #2a3241;
+	color: #b8c6d6;
+	display: block;
+}
+
+.views{
+	width:calc(100% - 212px);
+	float:left;
+}
+
+//padding
+//=======================================
+
+.padding-left-5 { padding-left: 5px; }
+.padding-left-10 { padding-left: 10px; }
+.padding-left-15 { padding-left: 15px; }
+.padding-top-15{ padding-top: 15px; }
+.padding-bottom-15{ padding-bottom: 15px; }
+
+//字体样式
+//======================================
+.font-bolder{ font-weight: bolder; }
+
+.line-height-30{ line-height: 30px; }
+.line-height-28{ line-height: 28px; }
+.line-height-16{ line-height: 26px; }
+.line-height-24{ line-height: 24px; }
+
+//宽度
+.width-75 { width: 75px; }
+.width-80 { width: 80px; }
+.width-85 { width: 85px; }
+.width-90 { width: 90px; }
+.width-95 { width: 95px; }
+.width-100 { width: 100px; }
+.width-105 { width: 105px; }
+.width-110 { width: 110px; }
+.width-115 { width: 115px; }
+.width-120 { width: 120px; }
+.width-125 { width: 125px; }
+.width-130 { width: 130px; }
+
+.width-less-75 { width: calc(100% - 75px); }
+.width-less-80 { width: calc(100% - 80px); }
+.width-less-85 { width: calc(100% - 85px); }
+.width-less-90 { width: calc(100% - 90px); }
+.width-less-95 { width: calc(100% - 95px); }
+.width-less-100 { width: calc(100% - 100px); }
+.width-less-105 { width: calc(100% - 105px); }
+.width-less-110 { width: calc(100% - 110px); }
+.width-less-115 { width: calc(100% - 115px); }
+.width-less-120 { width: calc(100% - 120px); }
+.width-less-125 { width: calc(100% - 125px); }
+.width-less-130 { width: calc(100% - 130px); }

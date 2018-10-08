@@ -1,0 +1,21 @@
+.formInput{
+	& > label, & > div{
+		display: block;
+		float: left;
+	}
+
+	& > label{
+		line-height: 30px;
+		text-align: right;
+		padding-right: 5px;
+	}
+
+	& > div{
+		.input input{
+			width:100%;
+		}
+	}
+	.red{
+		color: #ff5f57;
+	}
+}

@@ -1,0 +1,40 @@
+.menus{
+	.menuNode{
+		cursor:pointer;
+		height:50px;
+		line-height: 50px;
+		.menu-icon-left{
+			color: #b8c6d6;
+			font-size: 16px;
+			display: block;
+			float:left;
+			padding:0 17px 0 17px;
+			line-height: 50px;
+		}
+		.menu-icon-right{
+			font-size:15px;
+			float:right;
+			display:block;
+			padding:0 14px;
+			transform:scale(0.6);
+			line-height: 50px;
+		}
+		.menu-name{
+			display:inline-block;
+			float:left;
+		}
+	}
+
+	&>div>div>div>div>div>p{
+		padding-left: 60px;
+	}
+
+	&>div>div>div>div>div>div>div>div>p{
+		padding-left: 70px;
+	}
+
+	.currentMenu{
+		background: #1e232e;
+		color:#fff;
+	}
+}

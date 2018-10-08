@@ -1,0 +1,36 @@
+
+.input{
+	line-height: 30px;
+	input{
+		line-height: 28px;
+		border: 1px solid #e4eaec;
+		border-radius: 15px;
+		background: #f3f7f9;
+		font-size: 14px;
+		padding: 0 15px;
+		color: #76838f;
+		box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+		transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+		&:disabled:hover{
+			cursor:not-allowed;
+		}
+	}
+	.blueBorder{
+		&:focus{
+			border: 1px solid #49a1ea;
+    		box-shadow: inset 0 1px 1px rgba(0,0,0,.05), 0 0 8px rgba(102,175,233,.3);
+		}
+	}
+	.redBorder{
+		&:focus{
+			border: 1px solid #ff5f57;
+    		box-shadow: inset 0 1px 1px rgba(0,0,0,.05), 0 0 8px rgba(102,175,233,.3);
+		}
+	}
+	.grey{
+		color: #b3b3b3;
+	}
+	.red{
+		color: #ff8572;
+	}
+}

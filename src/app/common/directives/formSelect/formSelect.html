@@ -1,0 +1,24 @@
+<div class='formSelect' ng-class='formGroupClass'>
+	<label ng-class='labelClass'>
+		{{labelName}}
+	</label>
+	<div class = 'dropdown' ng-class='inputClass'>
+		<div ng-click="showSelect($event)">
+			<e-input 
+				ng-model = 'selectText'
+				place-holder='placeholder'
+				ng-disabled='true'
+				></e-input>
+			<span class="icon-arrowb selectIcon"></span>
+		</div>
+
+		<ul class = 'dropdown-menu'>
+			<li 
+				class='e-fade'
+				ng-repeat = 'item in selectData' 
+				ng-click='getSelect(item, $event)'
+				ng-if='!hideItem.includes(item.code)'
+				>{{item.name}}</li>
+		</ul>
+	</div>
+</div>

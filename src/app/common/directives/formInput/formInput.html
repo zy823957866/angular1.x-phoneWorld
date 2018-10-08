@@ -1,0 +1,12 @@
+<div class="formInput" ng-class="formGroupClass">
+	<label ng-class="labelClass">
+		{{lalebName}}
+		<span ng-if='require' class="red">+</span>
+	</label>
+	<div ng-class="inputClass">
+		<e-input 
+			ng-model = 'ngModel' 
+			ng-disabled = 'disabled'
+			place-holder="placeholder"></e-input>
+	</div>
+</div>

@@ -1,0 +1,410 @@
+@charset "utf-8";
+
+// 公共样式----------------------------------------------------------------------------------------
+
+div,body,h1,h2,h3,h4,h5,h6,p,span,form,input,select,table,ul,li,a,ol,menu{margin: 0;padding: 0}
+img{border:none;display: block;}
+a,select,option{text-decoration: none;color: #333;outline:none;}
+a{&:link,&:visited,&:hover{text-decoration: none;}}
+h1,h2,h3,h4,h5,h6{font-weight: normal}
+textarea{resize:none;}
+li{list-style: none}
+html,body{width: 100%;height: 100%;font-size: 62.5%;}
+body{font-family: "Microsoft YaHei";font-size: 1.4rem;}
+
+
+//带兼容的样式------------------------------------------------------------------------------------
+
+//opacity 透明度
+@mixin opacity ($factor: 0.7){
+    filter: alpha(opacity=$factor * 100);
+    opacity: $factor;
+}
+
+// background-origin 图片平铺的开始位置 默认有三种：border | padding | content
+@mixin background-origin($b:padding){
+  -webkit-background-origin: $b;
+  -moz-background-origin: $b;
+  -o-background-origin: $b;
+  background-origin: $b;
+}
+
+//背景图片，图片路径：url, 是否重复：repeat
+@mixin background-img($url, $repeat:no-repeat){
+  background: url($url) $repeat;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src=$url, sizingMethod='scale');
+}
+
+//图片背景尺寸 宽度:w, 高度：h
+@mixin background-size($w:auto, $h:auto){
+  -moz-background-size:$w $h;
+  -ms-background-size:$w $h;
+  -o-background-size: $w $h;
+  -webkit-background-size: $w $h;
+  background-size: $w $h;
+}
+
+//文字阴影
+@mixin text-shadow($args){
+  -ms-text-shadow: $args;
+  -moz-text-shadow: $args;
+  -webkit-text-shadow: $args;
+  -o-text-shadow: $args;
+  text-shadow: $args;
+}
+
+//圆角半径
+@mixin border-radius($radius : 5px){
+  -ms-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+
+//盒子阴影
+@mixin box-shadow($args){
+  -ms-box-shadow: $args;
+  -moz-box-shadow: $args;
+  -webkit-box-shadow: $args;
+  -o-box-shadow: $args;
+  box-shadow: $args;
+}
+
+//线性渐变  镜像渐变
+@mixin linear-gradient($arg){
+  background-image: -webkit-linear-gradient($arg);
+  background-image: -moz-linear-gradient($arg);
+  background-image: -ms-linear-gradient($arg);
+  background-image: -o-linear-gradient($arg);
+  background-image: linear-gradient($arg); 
+}
+
+@mixin radial-gradient($arg){
+  background-image: -webkit-radial-gradient($arg);
+  background-image: -moz-radial-gradient($arg);
+  background-image: -ms-radial-gradient($arg);
+  background-image: -o-radial-gradient($arg);
+  background-image: radial-gradient($arg);
+}
+
+//变形工具
+@mixin transform($args){
+  -webkit-transform: $args;
+  -ms-transform: $args;
+  -o-transform: $args;
+  -moz-transform: $args;
+  transform: $args;
+}
+
+@mixin transform-origin($args){
+  -webkit-transform-origin: $args;
+  -o-transform-origin: $args;
+  -moz-transform-origin: $args;
+  -ms-transform-origin: $args;
+  transform-origin: $args;
+}
+
+@mixin transform-style($style){
+  -webkit-transform-style: $style;
+  -ms-transform-style: $style;
+  -o-transform-style: $style;
+  -moz-transform-style: $style;
+  transform-style: $style;
+}
+
+@mixin rotate($deg:45deg){
+  @include transform(rotate($deg));
+}
+
+@mixin translate($x, $y){
+  @include transform(translate($x, $y));
+}
+
+@mixin skew($deg: 45deg){
+  @include transform(skew($deg));
+}
+
+@mixin scale($x, $y){
+  @include transform(scale($x, $y));
+}
+
+//transition
+@mixin transition($args){
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  -webkit-transition: $args;
+  transition: $args;
+}
+
+
+//布局常用样式------------------------------------------------------------------------------------
+@mixin size($w, $h){
+  width: $w;
+  height: $h;
+}
+
+// 内联块级元素, 兼容IE6
+@mixin dib{
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+} 
+
+@mixin min-width($min-w){
+  min-width: $min-w;
+  _width: $min-w;
+}
+
+@mixin min-height($min-h){
+  min-height: $min-h;
+  _height: $min-h;
+}
+
+//固定定位, 兼容IE6
+@mixin fixed{
+  position: fixed;
+  _position: absolute; 
+  *zoom: 1;
+}
+
+@mixin border-box{
+ *, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  }  
+}
+
+// 文字图片居中
+@mixin center($type){
+  @if $type==text-x {
+    text-align: center;
+  } @else if $type==text-y {
+    display: table-cell;
+    vertical-align: middle;
+  } @else if $type==auto-x {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  } @else {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}  
+  
+// 多个子项布局
+@mixin list($type, $w: 25%){
+  @if $type == float {
+    float: left; 
+    width: $w;
+  } @else if $type == inline {
+    @include dib;
+    width: $w;
+  } @else if $type == flex {
+    flex: 1;
+  }
+} 
+  
+// 遮罩层, 全屏遮罩、区域遮罩
+@mixin over-screen($type){
+  @if $type == fixed {
+    @include fixed;
+  } @else if $type == absolute {
+    position: absolute;
+  }
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+  
+// 容器宽高比固定  
+// 100* 1/1 = 100%  
+// 100* 3/4 = 75%
+@mixin fixed-ratio($padding-top: 100%){
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: $padding-top;  
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+} 
+  
+// 扩展点击区域
+@mixin extend-click($w: 10px){
+  position: relative;  
+  &:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+  }  
+}
+  
+// 定宽居中页面布局
+@mixin layout-page($width: 1200px){
+  width: $width;
+  margin-left: auto;
+  margin-right: auto; 
+}
+  
+// 侧边栏
+@mixin sidebar($type, $w){
+  position: absolute;
+  top: 0;
+  width: $w;
+  @if $type == left {
+    left: 0;
+  } @else if $type == right {
+    right: 0;
+  }
+}
+
+
+//功能常用样式------------------------------------------------------------------------------------
+// 浮动, 兼容 IE6
+@mixin fl{
+  float: left;
+  *display: inline;
+  _display:inline;
+}
+.fl{
+  @include fl;
+}  
+
+@mixin fr{
+  float: right;
+  *display: inline;
+  _display:inline;
+}
+.fr{
+  @include fr;
+}
+
+// 禁止文本被选择
+@mixin user-select{
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+// 隐藏鼠标手势
+@mixin hide-cursor{
+  cursor: none !important;
+}
+
+@mixin disabled{
+  cursor: not-allowed;
+}
+
+// 隔行换色
+@mixin zebra-lists($color1, $color2){
+  >li:nth-child(odd) { background-color: $color1; }
+  >li:nth-child(even) { background: $color2; }
+}
+
+// 美化占位符 placeholder 样式
+@mixin beauty-placeholder($fz, $color: #999, $align: left){
+  &:-moz-placeholder {
+    font-size: $fz;
+    color: $color;
+    text-align: $align;
+  }  
+  &:-ms-input-placeholder {
+    font-size: $fz;
+    color: $color;
+    text-align: $align;
+  }  
+  &::-webkit-input-placeholder {
+    font-size: $fz;
+    color: $color;
+    text-align: $align;
+  }  
+} 
+
+//清除浮动
+@mixin clearfix{
+  *zoom: 1;  
+  &:after {
+    display: block;
+    clear: both;
+    content: '';
+    visibility: hidden;
+    height: 0; 
+  }
+}
+
+//文字常用样式------------------------------------------------------------------------------------
+//文字
+@mixin font-size($lh,$h,$size:14px){
+  font-size: $size;
+  line-height: $l;
+  height: $h;
+}
+
+// 禁止换行, 文本溢出省略号显示 (一行)
+@mixin ellipsis{
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-all;  
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  text-overflow:ellipsis;
+  overflow:hidden; 
+} 
+
+// 书写模式：牌匾从右至左水平单行排版效果、文笺从右至左、从上至下排版效果
+@mixin retext($type){
+  @if $type == x {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+  }@else if $type == y {
+    writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+  }
+}
+
+//三角形------------------------------------------------------------------------------------------
+@mixin triangle($width, $height, $color, $direction) {
+    $width: $width/2;
+    $color-border-style: $height solid $color;
+    $transparent-border-style: $width solid transparent;
+    height: 0;
+    width: 0;
+    @if $direction==up {
+        border-bottom: $color-border-style;
+        border-left: $transparent-border-style;
+        border-right: $transparent-border-style;
+    }
+    @else if $direction==right {
+        border-left: $color-border-style;
+        border-top: $transparent-border-style;
+        border-bottom: $transparent-border-style;
+    }
+    @else if $direction==down {
+        border-top: $color-border-style;
+        border-left: $transparent-border-style;
+        border-right: $transparent-border-style;
+    }
+    @else if $direction==left {
+        border-right: $color-border-style;
+        border-top: $transparent-border-style;
+        border-bottom: $transparent-border-style;
+    }
+}

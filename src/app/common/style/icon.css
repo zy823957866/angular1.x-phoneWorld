@@ -1,0 +1,332 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?5eomjl');
+  src:  url('../fonts/icomoon.eot?5eomjl#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?5eomjl') format('truetype'),
+    url('../fonts/icomoon.woff?5eomjl') format('woff'),
+    url('../fonts/icomoon.svg?5eomjl#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-add:before {
+  content: "\e900";
+}
+.icon-apiAbilityInfo:before {
+  content: "\e901";
+}
+.icon-arrowb:before {
+  content: "\e902";
+}
+.icon-arrowr:before {
+  content: "\e903";
+}
+.icon-automationRules:before {
+  content: "\e904";
+}
+.icon-businessMge:before {
+  content: "\e905";
+}
+.icon-Check-box .path1:before {
+  content: "\e906";
+  color: rgb(243, 247, 249);
+}
+.icon-Check-box .path2:before {
+  content: "\e907";
+  margin-left: -1em;
+  color: rgb(228, 234, 236);
+}
+.icon-Check-box_click:before {
+  content: "\e908";
+  color: #49a1ea;
+}
+.icon-Check-box1:before {
+  content: "\e909";
+  color: #e1e1e1;
+}
+.icon-check:before {
+  content: "\e90a";
+}
+.icon-checkboxChecked .path1:before {
+  content: "\e90b";
+  color: rgb(73, 161, 234);
+}
+.icon-checkboxChecked .path2:before {
+  content: "\e90c";
+  margin-left: -1em;
+  color: rgb(243, 247, 249);
+}
+.icon-checkboxDisabled .path1:before {
+  content: "\e90d";
+  color: rgb(221, 221, 221);
+}
+.icon-checkboxDisabled .path2:before {
+  content: "\e90e";
+  margin-left: -1em;
+  color: rgb(243, 247, 249);
+}
+.icon-checkboxNotChecked:before {
+  content: "\e90f";
+  color: #f3f7f9;
+}
+.icon-cipher:before {
+  content: "\e910";
+}
+.icon-close:before {
+  content: "\e911";
+}
+.icon-communicateMge:before {
+  content: "\e912";
+}
+.icon-concat:before {
+  content: "\e913";
+}
+.icon-dashboard:before {
+  content: "\e914";
+}
+.icon-date:before {
+  content: "\e915";
+}
+.icon-delete:before {
+  content: "\e916";
+}
+.icon-delete1:before {
+  content: "\e917";
+}
+.icon-detail .path1:before {
+  content: "\e918";
+  color: rgb(184, 198, 214);
+}
+.icon-detail .path2:before {
+  content: "\e919";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-detail .path3:before {
+  content: "\e91a";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-detail .path4:before {
+  content: "\e91b";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-diagnosis_detail:before {
+  content: "\e91c";
+}
+.icon-diagnosis_smart:before {
+  content: "\e91d";
+}
+.icon-doload:before {
+  content: "\e91e";
+}
+.icon-download:before {
+  content: "\e91f";
+}
+.icon-download2:before {
+  content: "\e920";
+}
+.icon-editer:before {
+  content: "\e921";
+}
+.icon-eight:before {
+  content: "\e922";
+}
+.icon-email:before {
+  content: "\e923";
+}
+.icon-Exclamation-mark:before {
+  content: "\e924";
+  color: #ff9200;
+}
+.icon-fail:before {
+  content: "\e925";
+  color: #ff3f3f;
+}
+.icon-financeMge:before {
+  content: "\e926";
+}
+.icon-five:before {
+  content: "\e927";
+}
+.icon-four:before {
+  content: "\e928";
+}
+.icon-GPRS:before {
+  content: "\e929";
+}
+.icon-groupMge:before {
+  content: "\e92a";
+}
+.icon-Help-document:before {
+  content: "\e92b";
+}
+.icon-help:before {
+  content: "\e92c";
+}
+.icon-integrated_query:before {
+  content: "\e92d";
+}
+.icon-left:before {
+  content: "\e92e";
+}
+.icon-left1:before {
+  content: "\e92f";
+}
+.icon-nine:before {
+  content: "\e930";
+}
+.icon-one:before {
+  content: "\e931";
+}
+.icon-Online-top-up:before {
+  content: "\e932";
+}
+.icon-out:before {
+  content: "\e933";
+}
+.icon-password .path1:before {
+  content: "\e934";
+  color: rgb(0, 0, 0);
+}
+.icon-password .path2:before {
+  content: "\e935";
+  margin-left: -1em;
+  color: rgb(51, 51, 51);
+}
+.icon-pause:before {
+  content: "\e936";
+}
+.icon-radioChecked .path1:before {
+  content: "\e937";
+  color: rgb(73, 161, 234);
+}
+.icon-radioChecked .path2:before {
+  content: "\e938";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-radioChecked .path3:before {
+  content: "\e939";
+  margin-left: -1em;
+  color: rgb(73, 161, 234);
+}
+.icon-radioNotChecked:before {
+  content: "\e93a";
+  color: #f3f7f9;
+}
+.icon-refresh:before {
+  content: "\e93b";
+}
+.icon-return:before {
+  content: "\e93c";
+}
+.icon-reUpload:before {
+  content: "\e93d";
+}
+.icon-right:before {
+  content: "\e93e";
+}
+.icon-right1:before {
+  content: "\e93f";
+}
+.icon-riskCtrl:before {
+  content: "\e940";
+}
+.icon-search:before {
+  content: "\e941";
+}
+.icon-seven:before {
+  content: "\e942";
+}
+.icon-shang:before {
+  content: "\e943";
+}
+.icon-shang1:before {
+  content: "\e944";
+}
+.icon-sim:before {
+  content: "\e945";
+}
+.icon-simSys:before {
+  content: "\e946";
+}
+.icon-six:before {
+  content: "\e947";
+}
+.icon-statistical:before {
+  content: "\e948";
+}
+.icon-succeed:before {
+  content: "\e949";
+  color: #00bf09;
+}
+.icon-switch:before {
+  content: "\e94a";
+}
+.icon-sys:before {
+  content: "\e94b";
+}
+.icon-ten:before {
+  content: "\e94c";
+}
+.icon-The-radio .path1:before {
+  content: "\e94d";
+  color: rgb(240, 244, 245);
+}
+.icon-The-radio .path2:before {
+  content: "\e94e";
+  margin-left: -1em;
+  color: rgb(228, 234, 236);
+}
+.icon-The-radio_click:before {
+  content: "\e94f";
+  color: #48a1ec;
+}
+.icon-The-radio1:before {
+  content: "\e950";
+  color: #e1e1e1;
+}
+.icon-three:before {
+  content: "\e951";
+}
+.icon-toggle:before {
+  content: "\e952";
+}
+.icon-two:before {
+  content: "\e953";
+}
+.icon-up:before {
+  content: "\e954";
+}
+.icon-user:before {
+  content: "\e955";
+}
+.icon-user1:before {
+  content: "\e956";
+}
+.icon-userList:before {
+  content: "\e957";
+}
+.icon-xia:before {
+  content: "\e958";
+}
+.icon-xia1:before {
+  content: "\e959";
+}

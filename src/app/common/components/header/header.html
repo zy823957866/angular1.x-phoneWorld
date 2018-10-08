@@ -1,0 +1,34 @@
+<div class="HEAD">
+	<div class="HEAD_IMG">
+		<img src="../../common/images/header/logo.png">
+	</div>
+
+	<ul class="HEAD_ACTION">
+		<li ng-click="downLoad()" 
+			ng-class="currentLi == 'downLoad' ? 'CURRENT_LI' : ''">
+			<span class="icon icon-doload"></span>
+			<p>下载管理</p>
+		</li>
+		<li ng-click="help()"
+			ng-class="currentLi == 'help' ? 'CURRENT_LI' : ''">
+			<span class="icon icon-help"></span>
+			<p>帮助文档</p>
+		</li>
+		<li ng-click="lang()"
+			ng-class="currentLi == 'lang' ? 'CURRENT_LI' : ''">
+			<span class="icon icon-switch"></span>
+			<p>简体中文</p>
+			<p>{{'PUBLIC.zh_CN'|T}}</p>
+			<div class="CHILDREN">
+				<span ng-click="changeLang('zh_CN')">中文</span>
+				<span ng-click="changeLang('en')">英文</span>
+			</div>
+		</li>
+		<li ng-click="user()"
+			ng-class="currentLi == 'user' ? 'CURRENT_LI' : ''">
+			<span class="icon icon-switch"></span>
+			<p>JHON</p>
+			<span class="icon icon-arrowb"></span>
+		</li>
+	</ul>
+</div>

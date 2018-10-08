@@ -1,0 +1,27 @@
+<div class="menus">
+    <div ng-repeat="menu in menus">
+        <div class="menuNode" ng-click="toggleMenu(menu, $event)" 
+        ng-class="currentUrl == menu.url ? 'currentMenu' : ''">
+            <span class="icon menu-icon-left" ng-class="menu.icon"></span>
+			<p class="menu-name">{{menu.menuName}}</p>
+			<span ng-if="menu.children.length"
+			 	class="icon menu-icon-right"
+			 	ng-class="menu.open ? 'icon-arrowb' : 'icon-arrowr'"></span>
+        </div>
+        <div ng-include="'menu.tpl'" ng-if="menu.open"></div>
+    </div>
+</div>
+<script type="text/ng-template" id="menu.tpl">
+    <div>
+        <div ng-repeat="menu in  menu.children">
+            <div class="menuNode" ng-click="toggleMenu(menu, $event)"
+            ng-class="currentUrl == menu.url ? 'currentMenu' : ''">
+                <p class="menu-name">{{menu.menuName}}</p>
+                <span class="icon menu-icon-right" ng-if="menu.children.length" 
+                ng-class="menu.open ? 'icon-arrowb' : 'icon-arrowr'"
+                ></span>
+            </div>
+            <div ng-include="'menu.tpl'" ng-if="menu.open"></div>
+        </div>
+    </div>
+</script>
